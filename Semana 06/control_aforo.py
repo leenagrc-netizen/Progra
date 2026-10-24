@@ -104,40 +104,37 @@ grupos_aceptados = []
 grupos_rechazados = []
 capacidad_maxima = 0
 
-entrada = input("Favor ingrese el grupo (o fin para terminar)")
+entrada = input("Favor ingrese el grupo (o fin para terminar): ").strip().lower()
 
-while entrada != 'fin':
+while entrada != "fin":
     try:
-        grupo = int(entrada)
-        capacidad_maxima = capacidad_maxima + grupo
-        if capacidad_maxima <= 700:
+        grupo = int(entrada) 
+        capacidad_maxima = capacidad_maxima + grupo # 650 + 60 = 710 
+        if capacidad_maxima <= 700: 
             grupos_aceptados.append(grupo)
-            print(f"Grupo aceptado")
-            
+            print("Grupo aceptado")
         else:
-                grupos_rechazados.append(grupo)
-                capacidad_maxima = capacidad_maxima - grupo
-                print("Grupo rechazado")
-                print(f"Ocupacion actual: {capacidad_maxima}")
-                print(f"Espacios disponibles: {700 - capacidad_maxima}")
+            grupos_rechazados.append(grupo)
+            capacidad_maxima = capacidad_maxima - grupo
+            print("Grupo rechazado")
+        print(f"Ocupación actual: {capacidad_maxima}")
+        print(f"Espacios disponibles: {700 - capacidad_maxima} \n")    
     except ValueError:
         grupo = -1
-        
-    entrada = input("Favor ingrese el grupo (o fin para terminar)")
-
-
+    entrada = input("Favor ingrese el grupo (o fin para terminar): ").strip().lower()
 
 personas_admitidas = 0
 for grupos in grupos_aceptados:
     personas_admitidas = personas_admitidas + grupos
 
 cantidad_aceptados = len(grupos_aceptados)
-print ("REPORTE FINAL")
-print ("-" * 80, )
-print (f"Grupos aceptados: {grupos_aceptados}")
-print (grupos_rechazados)
-print (capacidad_maxima)
-print (personas_admitidas)
+
+print("REPORTE FINAL")
+print("-"*80,"\n")
+print(f"Grupos aceptados: {cantidad_aceptados}")
+print(grupos_aceptados)
+print(grupos_rechazados)
+print(personas_admitidas)
 
 
 
