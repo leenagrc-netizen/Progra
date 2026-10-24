@@ -6,13 +6,14 @@ porcentajes. Para un análisis, se transformarán a valores entre 0 y 1.
 Prediga la lista final. Complete la actualización y siga el valor del índice.
 """
 
-puntajes = [72, 85, 90]
+puntajes = [72, 85, 90, 100]
 indice = 0
 
 while indice < len(puntajes):
+    puntajes[indice] = puntajes[indice] / 100
     # TODO: actualice el puntaje de esta posición dividiéndolo entre 100.
-    pass
-
+    print ("seleccion por indice", puntajes [indice])
+    
     indice += 1
 
 print("Puntajes normalizados:", puntajes)
