@@ -25,3 +25,4 @@ for sede in sedes:
         f"Cumplimiento: {porcentaje:.2f}% : {estado}"
         
     )
+    
