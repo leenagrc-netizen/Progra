@@ -11,6 +11,7 @@ sede = {
     "ventas": [85000, 92000, 78000],
     "meta": 450000,
 }
+
 print("Nombre:", sede["nombre"])
 print("Primera venta:", sede["ventas"][0])
 print("Meta inicial:", sede["meta"])
@@ -18,8 +19,10 @@ print("Meta inicial:", sede["meta"])
 # La meta registrada cambió a 470000.
 # TODO: actualice solo el valor asociado con la clave "meta".
 
+sede ['meta'] = 470000
+
 print("Meta corregida:", sede["meta"])
 print("Nombre después del cambio:", sede["nombre"])
-
+print ('Total de ventas:', sum(sede["ventas"]))
 # Para explicar: ¿por qué el nombre y las ventas siguen iguales?
 # Para comprobar: la meta pasa de 450000 a 470000.
