@@ -72,8 +72,32 @@ for registro in registros:
             
 print("\nTotal de medicamentos recetados:", total_medicamentos)
 for medicamento, cantidad in conteo_medicamentos.items(): 
-    print(f"- {medicamento}: {cantidad}")
+    print(f"- {medicamento}: \t{cantidad}")
 
 # FASE 3: CONTAR ATENCIONES POR HOSPITAL
+print("\nANALISIS FASE #3 HOSPITALES Y ATENCIONES")
+conteo_hospital = {}
+total_pacientes = 0
+for registro in registros:
+    total_pacientes += 1
+    if registro['hospital'] in conteo_hospital:
+        conteo_hospital[registro['hospital']] += 1
+    else:
+        conteo_hospital[registro['hospital']] = 1
+print("\nTotal de pacientes atendidos:", total_pacientes)
+for hospital, cantidad in conteo_hospital.items():
+    print(f"- {hospital}: \t{cantidad}")
 
 # FASE 4: CONTAR ATENCIONES POR ENFERMEDAD DIAGNOSTICADA
+print("\nANALISIS FASE #4 ENFERMEDADES Y ATENCIONES")
+conteo_diagnostico = {}
+total_diagnosticos = 0
+for registro in registros:
+    total_diagnosticos += 1
+    if registro['diagnostico'] in conteo_diagnostico:
+        conteo_diagnostico[registro['diagnostico']] += 1
+    else:
+        conteo_diagnostico[registro['diagnostico']] = 1
+print("\nTotal de diagnósticos realizados:", total_diagnosticos)
+for diagnostico, cantidad in conteo_diagnostico.items():
+    print(f"- {diagnostico}: \t{cantidad}")
