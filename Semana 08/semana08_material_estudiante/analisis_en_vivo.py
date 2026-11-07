@@ -58,7 +58,9 @@ print("\nANALISIS FASE #2 MEDICAMENTOS Y ATENCIONES")
 conteo_medicamentos = {}
 total_medicamentos = 0
 for registro in registros:
+
     for medicamento in registro['medicamentos']:
+        
         #Limpieza PARACETAMOL -> paracetamol -> aceteminofén
         medicamento = medicamento.strip().lower()
         if medicamento in equivalencias:
