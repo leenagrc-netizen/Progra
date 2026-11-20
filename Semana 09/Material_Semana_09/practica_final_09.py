@@ -16,8 +16,8 @@ def sumar_esperas(lista_minutos):
     total = 0
 
     for minutos in lista_minutos:
-        # TODO 1: aumente el acumulador total con los minutos del ciclo.
-        pass
+        
+        total += minutos
 
     return total
 
@@ -27,17 +27,21 @@ print("Tiempos:", ESPERAS)
 
 total_minutos = sumar_esperas(ESPERAS)
 
+
 # TODO 2: calcule el promedio usando total_minutos y len(ESPERAS).
 # Sustituya el 0 por la expresión correspondiente.
-promedio = 0
+promedio = total_minutos / len(ESPERAS)
 
 esperas_largas = 0
 for minutos in ESPERAS:
     # TODO 3: si la espera supera 30 minutos, incremente esperas_largas.
-    pass
+    if minutos > 30:
+        esperas_largas += 1
+    else:
+        pass
 
 print("Total de minutos:", total_minutos)
-print("Promedio de minutos:", round(promedio, 2))
+print("Promedio de minutos:", promedio)
 print("Esperas mayores a 30 minutos:", esperas_largas)
 
 
@@ -52,10 +56,12 @@ respuesta = input("Minutos de espera (0 para salir): ")
 while respuesta != "0":
     # TODO 4: convierta respuesta a número entero utilizando int().
     # Sustituya el 0 por la expresión correspondiente.
-    minutos = 0
+    minutos = int(respuesta)
 
     # TODO 5: sume minutos a total_registrado y aumente cantidad en 1.
-    pass
+    total_registrado += minutos
+    cantidad += 1
+    
 
     # Esta línea ya está lista; permite continuar o terminar el ciclo.
     respuesta = input("Minutos de espera (0 para salir): ")

@@ -17,4 +17,4 @@ def sumar_esperas(minutos):
 #TODO: llame a la función sumar_esperas y guarde el resultado en una variable. Luego, imprima el resultado en horas.
 resultado_horas = sumar_esperas(ESPERAS) 
 
-print(f"{resultado_horas:.2f} horas")
+print(f"El total en horas es de: {resultado_horas:.2f} horas")
