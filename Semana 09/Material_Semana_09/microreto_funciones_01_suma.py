@@ -6,25 +6,15 @@ ESPERAS = [12, 20, 18]
 
 def sumar_esperas(minutos):
     """Devuelve la suma de los minutos recibidos en horas."""
-    total = 0 #ESTO LE DICE AL SISTEMA QUE TOTAL VA A CONTAR
-    
+    total = 0
 
     for minuto in minutos:
         # TODO: acumule cada minuto en total.
         total += minuto
 
-    return total / 60  # Devuelve el total en horas
+    return total / 60
 
 #TODO: llame a la función sumar_esperas y guarde el resultado en una variable. Luego, imprima el resultado en horas.
-horas = sumar_esperas(ESPERAS)
+resultado_horas = sumar_esperas(ESPERAS) 
 
-print(f"El total de espera es de : {horas} horas")   
-
-
-total = sumar_esperas(ESPERAS)
-print(sumar_esperas(ESPERAS))
-
-
-totales = []
-totales.append(sumar_esperas([20,60,20,30,]))
-totales.append(sumar_esperas([10,60,180,20]))
+print(f"{resultado_horas:.2f} horas")
