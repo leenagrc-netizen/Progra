@@ -1,24 +1,31 @@
 """El mismo expediente, con Pandas y las mismas tres funciones."""
-
+import pandas as pd
 from pathlib import Path
 
 ARCHIVO_CSV = Path(__file__).with_name("atenciones.csv")
 
 
 def explorar_atenciones(atenciones):
-    pass
+    print('atenciones', len(atenciones))
+    print('atenciones', type(atenciones))
+    print('campos', list(atenciones.columns))
+
 
 
 def contar_categorias(atenciones):
-    pass
-
+    print('Medicamentos', atenciones['medicamento'].value_counts().to_dict())
+    print('Hospitales', atenciones['hospital'].value_counts().to_dict())
+    print('Diagnosticos', atenciones['diagnostico'].value_counts().to_dict())
 
 def concluir(atenciones):
-    pass
-
+    print('Pacientes', atenciones['cedula'].nunique())
+    print('Minutos espera', atenciones['minutos_espera'].sum())
+    print('Promedio espera', atenciones['minutos_espera'].mean())
+    print('Minutos moda', atenciones['minutos_espera'].mode())
+    print('Minutos media', atenciones['minutos_espera'].median())
 
 try:
-    pass ##PANDAS.....
+    atenciones = pd.read_csv(ARCHIVO_CSV)
 except FileNotFoundError:
     print(f"No encontramos el archivo: {ARCHIVO_CSV}")
     raise SystemExit(1)

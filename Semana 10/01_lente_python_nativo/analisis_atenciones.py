@@ -7,12 +7,16 @@ def explorar_atenciones(atenciones):
     """Decisión 1: ¿qué leímos y cuántas atenciones hay?"""
     # Contamos las filas con un for. Luego miramos los campos de la primera.
     cantidad = 0
+    
     for atencion in atenciones:
         # Completamos aquí el contador.
-        pass
+        cantidad += 1
 
     print("Atenciones:", cantidad)
     print("Campos:", list(atenciones[0]))
+    print('Tipo', type(atenciones))
+
+
 
 
 def contar_categorias(atenciones):
@@ -24,7 +28,18 @@ def contar_categorias(atenciones):
     for atencion in atenciones:
         # Los nombres ya vienen uniformes en el CSV.
         # Contamos cada categoría en su diccionario con .get().
-        pass
+        medicamento = atencion['medicamento']
+        if medicamento not in medicamentos:
+            medicamentos[medicamento] = 0
+            medicamentos[medicamento] =+ 1
+        #get()    
+        hospital = atencion['hospital']
+        hospitales['hospital'] = hospitales.get(hospital, 0) + 1
+        
+        diagnostico = atenciones['diagnosticos']
+        if diagnostico not in diagnosticos:
+            diagnosticos[diagnostico] = 0
+            diagnosticos[diagnostico] =+ 1
 
     print("Medicamentos:", medicamentos)
     print("Hospitales:", hospitales)
