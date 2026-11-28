@@ -13,15 +13,21 @@ Ejecute desde la carpeta material_estudiante:  python 1_filtros_pandas/nivel_7_f
 """
 import pandas as pd
 from nivel_6_columna_nueva import notas_con_promedio
+from pathlib import Path
 
+ARCHIVO_CVS = Path(__file__).with_name("notas.csv")
+notas = pd.read_csv(ARCHIVO_CVS)
 
 def aprobados(ruta, minimo):
     """Estudiantes con promedio mayor o igual que 'minimo'."""
     notas = notas_con_promedio(ruta)    # cascada: nivel 6
     # su código aquí
+    filtro = notas['promedio'] >= minimo
+    print(filtro)
     return notas
 
 
 if __name__ == "__main__":
     resultado = aprobados("notas.csv", 70)
     print("Estudiantes:", len(resultado))
+    print(resultado)

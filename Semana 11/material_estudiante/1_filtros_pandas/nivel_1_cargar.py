@@ -11,9 +11,11 @@ NIVEL 1 · COMPLETAR EL HUECO. Cambie ____ por lo que corresponda (se hace igual
 Ejecute desde la carpeta material_estudiante:  python 1_filtros_pandas/nivel_1_cargar.py
 """
 import pandas as pd
+from pathlib import Path
 
+ARCHIVO_CVS = Path(__file__).with_name("notas.csv")
 # 1. Lea el archivo notas.csv y guárdelo en la variable notas
-notas = pd.read_csv(____)
+notas = pd.read_csv(ARCHIVO_CVS)
 
 # 2. Mire los datos (estas líneas ya están listas)
 print(notas.head(3))            # las primeras 3 filas

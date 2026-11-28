@@ -14,15 +14,21 @@ Ejecute desde la carpeta material_estudiante:  python 1_filtros_pandas/nivel_6_c
 """
 import pandas as pd
 from nivel_5_funcion_cargar import cargar_notas
+from pathlib import Path
 
+ARCHIVO_CVS = Path(__file__).with_name("notas.csv")
+# 1. Lea el archivo notas.csv y guárdelo en la variable notas
+notas = pd.read_csv(ARCHIVO_CVS)
 
 def notas_con_promedio(ruta):
     """Notas con la columna 'promedio'."""
     notas = cargar_notas(ruta)    # cascada: usamos la función del nivel 5
     # su código aquí
+    filtro = ['tarea', 'practica', 'examen', 'proyecto']
+    notas['promedio'] = notas[filtro].mean(axis=1)  # axis=1 = "a lo ancho"
     return notas
 
 
 if __name__ == "__main__":
     notas = notas_con_promedio("notas.csv")
-    print(notas[["nombre", "promedio"]].head(3))
+    print(notas)
